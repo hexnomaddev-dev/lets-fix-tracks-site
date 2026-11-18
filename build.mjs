@@ -1,6 +1,7 @@
 import { copyFileSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { pages, release } from './content.mjs';
+import { copyDailyArchive } from './copy-daily-archive.mjs';
 
 const site = process.env.SITE_URL ? new URL(process.env.SITE_URL) : null;
 const releaseBuild = process.argv.includes('--release');
@@ -92,4 +93,5 @@ ${sitemap}
 </urlset>
 `);
 else rmSync('dist/sitemap.xml', { force: true });
+copyDailyArchive();
 console.log(`Built ${routes.length} pages for ${url('')}`);

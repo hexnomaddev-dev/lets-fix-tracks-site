@@ -1,0 +1,2 @@
+# The manifest checksums the exact published bytes.
+/daily-puzzles/**/*.json -text
