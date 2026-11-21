@@ -1,0 +1,73 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-11-21_easy",
+  "title": "Beyond the River Flats",
+  "difficulty": "easy",
+  "gridSize": 6,
+  "terminals": {
+    "start": {
+      "row": 5,
+      "col": 4,
+      "piece": "VERTICAL",
+      "externalSide": "SOUTH"
+    },
+    "destination": {
+      "row": 0,
+      "col": 0,
+      "piece": "HORIZONTAL",
+      "externalSide": "WEST"
+    }
+  },
+  "clues": {
+    "rows": [
+      3,
+      1,
+      3,
+      4,
+      5,
+      4
+    ],
+    "cols": [
+      4,
+      4,
+      6,
+      3,
+      3,
+      0
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 2,
+        "col": 2,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 2,
+        "col": 1,
+        "piece": "HORIZONTAL"
+      },
+      {
+        "row": 4,
+        "col": 2,
+        "piece": "TOP_RIGHT"
+      }
+    ],
+    "fixedEmpty": [
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 2,
+        "col": 5
+      },
+      {
+        "row": 0,
+        "col": 3
+      }
+    ]
+  }
+}

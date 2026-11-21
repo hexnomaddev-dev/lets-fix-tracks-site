@@ -1,0 +1,85 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-11-21_hard",
+  "title": "The Road Between the Stations",
+  "difficulty": "hard",
+  "gridSize": 11,
+  "terminals": {
+    "start": {
+      "row": 0,
+      "col": 9,
+      "piece": "TOP_RIGHT",
+      "externalSide": "NORTH"
+    },
+    "destination": {
+      "row": 10,
+      "col": 8,
+      "piece": "BOTTOM_LEFT",
+      "externalSide": "SOUTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      5,
+      6,
+      4,
+      5,
+      4,
+      2,
+      2,
+      3,
+      1,
+      2,
+      4
+    ],
+    "cols": [
+      0,
+      2,
+      5,
+      2,
+      7,
+      6,
+      5,
+      2,
+      3,
+      3,
+      3
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 3,
+        "col": 4,
+        "piece": "BOTTOM_LEFT"
+      },
+      {
+        "row": 3,
+        "col": 3,
+        "piece": "HORIZONTAL"
+      },
+      {
+        "row": 9,
+        "col": 5,
+        "piece": "BOTTOM_LEFT"
+      },
+      {
+        "row": 1,
+        "col": 10,
+        "piece": "VERTICAL"
+      },
+      {
+        "row": 4,
+        "col": 4,
+        "piece": "TOP_RIGHT"
+      },
+      {
+        "row": 2,
+        "col": 5,
+        "piece": "BOTTOM_LEFT"
+      }
+    ],
+    "fixedEmpty": []
+  }
+}

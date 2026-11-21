@@ -1,0 +1,96 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-11-21_medium",
+  "title": "A Silent Signal Cabin",
+  "difficulty": "medium",
+  "gridSize": 9,
+  "terminals": {
+    "start": {
+      "row": 4,
+      "col": 8,
+      "piece": "HORIZONTAL",
+      "externalSide": "EAST"
+    },
+    "destination": {
+      "row": 8,
+      "col": 8,
+      "piece": "BOTTOM_LEFT",
+      "externalSide": "SOUTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      0,
+      0,
+      0,
+      3,
+      7,
+      8,
+      4,
+      4,
+      5
+    ],
+    "cols": [
+      2,
+      4,
+      3,
+      6,
+      4,
+      4,
+      2,
+      4,
+      2
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 7,
+        "col": 3,
+        "piece": "VERTICAL"
+      },
+      {
+        "row": 5,
+        "col": 6,
+        "piece": "HORIZONTAL"
+      },
+      {
+        "row": 8,
+        "col": 4,
+        "piece": "HORIZONTAL"
+      },
+      {
+        "row": 5,
+        "col": 2,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 6,
+        "col": 1,
+        "piece": "TOP_RIGHT"
+      },
+      {
+        "row": 7,
+        "col": 7,
+        "piece": "BOTTOM_LEFT"
+      },
+      {
+        "row": 7,
+        "col": 5,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "piece": "TOP_LEFT"
+      }
+    ],
+    "fixedEmpty": [
+      {
+        "row": 3,
+        "col": 7
+      }
+    ]
+  }
+}
