@@ -1,0 +1,51 @@
+{
+  "format": "lets-fix-tracks.official-daily-package",
+  "schemaVersion": "1.0.0",
+  "date": "2026-11-22",
+  "puzzles": [
+    {
+      "puzzleId": "lft_daily_2026-11-22_easy",
+      "date": "2026-11-22",
+      "difficulty": "easy",
+      "path": "easy.json",
+      "playerFormat": "lets-fix-tracks.player-puzzle",
+      "playerSchemaVersion": "1.0.0",
+      "generatorVersion": "1.2.0",
+      "canonicalHash": "lft_hash_bc4fa7cb1f7319c1",
+      "sha256": "fd9e1fe46dd99558a2538f0f0708f504e4247e27ff35055f4aa3cf32e8e086b4"
+    },
+    {
+      "puzzleId": "lft_daily_2026-11-22_medium",
+      "date": "2026-11-22",
+      "difficulty": "medium",
+      "path": "medium.json",
+      "playerFormat": "lets-fix-tracks.player-puzzle",
+      "playerSchemaVersion": "1.0.0",
+      "generatorVersion": "1.2.0",
+      "canonicalHash": "lft_hash_dd40cc8983fcd7bf",
+      "sha256": "8a7573eeb998a0bba04271d97756a2df5e3885b2ac86a9d17beba66de0854f35"
+    },
+    {
+      "puzzleId": "lft_daily_2026-11-22_hard",
+      "date": "2026-11-22",
+      "difficulty": "hard",
+      "path": "hard.json",
+      "playerFormat": "lets-fix-tracks.player-puzzle",
+      "playerSchemaVersion": "1.0.0",
+      "generatorVersion": "1.2.0",
+      "canonicalHash": "lft_hash_fbf151b5e82af94b",
+      "sha256": "712e99e7d3d3a124053c0b47eb41b0aabee05731110385b50dbd1e0d2abbfbc3"
+    },
+    {
+      "puzzleId": "lft_daily_2026-11-22_expert",
+      "date": "2026-11-22",
+      "difficulty": "expert",
+      "path": "expert.json",
+      "playerFormat": "lets-fix-tracks.player-puzzle",
+      "playerSchemaVersion": "1.0.0",
+      "generatorVersion": "1.2.0",
+      "canonicalHash": "lft_hash_fd212e7cadfadef2",
+      "sha256": "1780cc687c1776684ef7699ce23cd5c9fed66a0b227197b042be1161b448ab45"
+    }
+  ]
+}

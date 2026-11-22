@@ -1,0 +1,79 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-11-22_expert",
+  "title": "Across the Marsh",
+  "difficulty": "expert",
+  "gridSize": 13,
+  "terminals": {
+    "start": {
+      "row": 7,
+      "col": 12,
+      "piece": "TOP_RIGHT",
+      "externalSide": "EAST"
+    },
+    "destination": {
+      "row": 0,
+      "col": 10,
+      "piece": "TOP_LEFT",
+      "externalSide": "NORTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      5,
+      7,
+      6,
+      8,
+      1,
+      2,
+      2,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "cols": [
+      0,
+      0,
+      0,
+      0,
+      2,
+      3,
+      4,
+      4,
+      3,
+      4,
+      2,
+      5,
+      5
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 1,
+        "col": 6,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 2,
+        "col": 4,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 3,
+        "col": 11,
+        "piece": "TOP_RIGHT"
+      },
+      {
+        "row": 3,
+        "col": 8,
+        "piece": "HORIZONTAL"
+      }
+    ],
+    "fixedEmpty": []
+  }
+}

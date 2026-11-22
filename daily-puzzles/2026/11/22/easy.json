@@ -1,0 +1,68 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-11-22_easy",
+  "title": "After the Quiet Return",
+  "difficulty": "easy",
+  "gridSize": 6,
+  "terminals": {
+    "start": {
+      "row": 5,
+      "col": 1,
+      "piece": "BOTTOM_RIGHT",
+      "externalSide": "SOUTH"
+    },
+    "destination": {
+      "row": 5,
+      "col": 5,
+      "piece": "TOP_RIGHT",
+      "externalSide": "EAST"
+    }
+  },
+  "clues": {
+    "rows": [
+      2,
+      5,
+      2,
+      4,
+      2,
+      4
+    ],
+    "cols": [
+      0,
+      4,
+      4,
+      5,
+      1,
+      5
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 2,
+        "col": 1,
+        "piece": "VERTICAL"
+      },
+      {
+        "row": 2,
+        "col": 5,
+        "piece": "VERTICAL"
+      }
+    ],
+    "fixedEmpty": [
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 5
+      },
+      {
+        "row": 4,
+        "col": 4
+      }
+    ]
+  }
+}
