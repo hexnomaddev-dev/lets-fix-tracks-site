@@ -1,0 +1,68 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-11-24_easy",
+  "title": "A Misty Embankment",
+  "difficulty": "easy",
+  "gridSize": 6,
+  "terminals": {
+    "start": {
+      "row": 0,
+      "col": 3,
+      "piece": "VERTICAL",
+      "externalSide": "NORTH"
+    },
+    "destination": {
+      "row": 4,
+      "col": 0,
+      "piece": "BOTTOM_LEFT",
+      "externalSide": "WEST"
+    }
+  },
+  "clues": {
+    "rows": [
+      1,
+      2,
+      2,
+      4,
+      4,
+      5
+    ],
+    "cols": [
+      2,
+      4,
+      5,
+      4,
+      3,
+      0
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 5,
+        "col": 1,
+        "piece": "HORIZONTAL"
+      },
+      {
+        "row": 3,
+        "col": 1,
+        "piece": "VERTICAL"
+      }
+    ],
+    "fixedEmpty": [
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 4
+      }
+    ]
+  }
+}

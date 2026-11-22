@@ -1,0 +1,99 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-11-24_expert",
+  "title": "A Weathered Goods Yard",
+  "difficulty": "expert",
+  "gridSize": 13,
+  "terminals": {
+    "start": {
+      "row": 0,
+      "col": 6,
+      "piece": "TOP_LEFT",
+      "externalSide": "NORTH"
+    },
+    "destination": {
+      "row": 12,
+      "col": 5,
+      "piece": "BOTTOM_LEFT",
+      "externalSide": "SOUTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      3,
+      2,
+      1,
+      4,
+      5,
+      3,
+      1,
+      2,
+      2,
+      5,
+      6,
+      3,
+      3
+    ],
+    "cols": [
+      6,
+      4,
+      4,
+      6,
+      8,
+      9,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 3,
+        "col": 3,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "piece": "BOTTOM_LEFT"
+      },
+      {
+        "row": 4,
+        "col": 3,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 5,
+        "col": 2,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 5,
+        "col": 1,
+        "piece": "HORIZONTAL"
+      },
+      {
+        "row": 10,
+        "col": 3,
+        "piece": "TOP_RIGHT"
+      },
+      {
+        "row": 11,
+        "col": 5,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 9,
+        "col": 2,
+        "piece": "BOTTOM_RIGHT"
+      }
+    ],
+    "fixedEmpty": []
+  }
+}
