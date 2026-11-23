@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { howToPlay } from './how-to-play.mjs';
+import { howToPlay, teachingBoard } from './how-to-play.mjs';
 
 export const release = {
   developer: 'Independent developer',
@@ -9,23 +9,24 @@ export const release = {
 
 const slides = [
   {
-    label: 'Actual gameplay', caption: 'The First Route · earlier 4 × 4 preview',
-    images: [['first-route-board.webp', 880, 894, 'A partly laid route with numbered clues, a square start and a circular endpoint.']],
+    label: 'Find the terminals', description: 'The square is your start. The circle is your destination. Their short tails show where the route connects.',
+    board: { stage: 1 },
   },
   {
-    label: 'Light and dark themes', caption: 'The same puzzle in light and dark',
-    images: [
-      ['first-route-board.webp', 880, 894, 'The First Route on a light board.'],
-      ['first-route-dark-board.webp', 880, 893, 'The First Route on a dark board.'],
-    ],
+    label: 'Let the clues lead', description: 'A zero means no track in that row or column. Mark those cells. The highlighted row now has four cells available for its clue of four.',
+    board: { stage: 2, highlight: 'row' },
   },
   {
-    label: 'Hints and assistance', caption: 'A hint explains where to place a corner',
-    images: [['hint-detail.webp', 880, 894, 'The hint panel suggests placing the Corner NE piece in the highlighted cell.']],
+    label: 'Build from the start', description: 'Join straights and corners from the square. Each piece counts as one cell in both its row and its column.',
+    board: { stage: 3, markZeros: true },
   },
   {
-    label: 'Puzzle variety', caption: 'Daily challenges in four difficulty levels',
-    images: [['difficulty-detail.webp', 659, 894, 'The daily puzzle menu lists Easy, Medium, Hard and Expert.']],
+    label: 'Bring the ends together', description: 'Turn toward the fixed piece and follow it toward the circle. One gap remains. Which shape fits?',
+    board: { stage: 3, markZeros: true, visiblePieces: [0, 1, 2, 3, 4, 5, 6, 8] },
+  },
+  {
+    label: 'One continuous route', description: 'The final horizontal piece closes the gap. Both terminals connect, every clue matches, and the puzzle is complete.',
+    board: { stage: 4, markZeros: true },
   },
 ];
 
@@ -39,64 +40,63 @@ export function pages({ url, artwork, download, developer, supportEmail }) {
       route: '', title: "Let's Fix Tracks — A railway logic puzzle",
       description: 'Connect two terminals with a single continuous railway track. A minimalist logic puzzle for Android.',
       body: `
-        <section class="wrap hero">
-          <div class="hero-copy">
-            <p class="eyebrow"><span class="terminal" aria-hidden="true"></span> A minimalist logic puzzle</p>
-            <h1>Let’s Fix<br><em>Tracks.</em></h1>
-            <p class="intro">Build one continuous railway line. Read the clues, place the pieces, and find the route from start to finish.</p>
-            <div class="hero-actions">${download}
-              <a class="text-link" href="${url('about/')}">How to play <span aria-hidden="true">↗</span></a>
+        <div class="home-page">
+          <section class="wrap home-hero">
+            <div class="home-introduction">
+              <p class="eyebrow">A railway logic puzzle</p>
+              <h1>Let’s Fix<br><em>Tracks.</em></h1>
+              <p class="home-tagline">A few clues. A little thought.<br>One satisfying connection.</p>
+              <p class="home-intro">Find a continuous route from the square to the circle. Every row and column has a clue. Every piece brings you a little closer.</p>
+              <div class="home-actions">
+                ${download || `<a class="home-primary" href="${url('about/')}">Learn to play</a>`}
+                <a class="text-link" href="#gallery-title">See the game</a>
+              </div>
+              <div class="home-route-key"><span class="home-square" aria-hidden="true"></span><span>Start</span><span class="home-key-line" aria-hidden="true"></span><span class="home-circle" aria-hidden="true"></span><span>Destination</span></div>
             </div>
-          </div>
-          <section class="hero-art" aria-label="Gameplay showcase" aria-roledescription="carousel" data-carousel>
-            <div class="board-field">
-              <svg class="board-track" viewBox="0 0 560 360" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M17 272h43q26 0 26-26v-30q0-24 24-24h322q26 0 26-26v-42q0-24 24-24h63"/>
-                <rect x="12" y="267" width="10" height="10"/>
-                <circle cx="545" cy="100" r="5"/>
-              </svg>
+            <section class="hero-art home-demo" aria-label="Solve a puzzle in five steps" aria-roledescription="carousel" data-carousel>
+              <div class="home-demo-heading"><h2>A puzzle, in five steps.</h2><span class="carousel-count" aria-hidden="true">1 / 5</span></div>
               <div class="carousel-stage" id="hero-slides">
-                ${slides.map(({ label, caption, images }, index) => `
-                  <div class="carousel-slide${index === 0 ? ' is-active' : ''}" role="group" aria-roledescription="slide"
-                    aria-label="${index + 1} of ${slides.length} · ${label}" aria-hidden="${index !== 0}" data-caption="${caption}">
-                    ${images.map(([file, width, height, alt]) => `<div class="slide-image">
-                      ${artwork(file, width, height, alt, index === 0)}
-                      <p class="image-fallback" hidden>Screenshot unavailable</p>
-                    </div>`).join('')}
-                  </div>`).join('')}
+                ${slides.map(({label, description, board}, index) => `<div class="carousel-slide${index === 0 ? ' is-active' : ''}" role="group" aria-roledescription="slide" aria-label="Step ${index + 1} of ${slides.length}. ${label}" aria-hidden="${index !== 0}" data-caption="${label}" data-description="${description}">
+                  ${teachingBoard('home-step-' + index, {...board, label: 'Step ' + (index + 1) + '. ' + label})}
+                </div>`).join('')}
               </div>
-            </div>
-            <p class="carousel-caption">${slides[0].caption}</p>
-            <div class="carousel-controls" hidden>
-              <button class="carousel-play" type="button" aria-label="Pause autoplay" title="Pause autoplay"><span aria-hidden="true">Ⅱ</span></button>
-              <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous slide" aria-controls="hero-slides"><span aria-hidden="true">←</span></button>
-              <div class="carousel-dots" role="group" aria-label="Choose a slide">
-                ${slides.map(({ label }, index) => `<button type="button" aria-label="Show ${label.toLowerCase()}" aria-controls="hero-slides"${index === 0 ? ' aria-current="true"' : ''}></button>`).join('')}
+              <div class="home-demo-copy"><p class="carousel-caption">${slides[0].label}</p><p class="carousel-description">${slides[0].description}</p></div>
+              <div class="carousel-controls" hidden>
+                <button class="carousel-play" type="button" aria-label="Pause autoplay" title="Pause autoplay"><span aria-hidden="true">Ⅱ</span></button>
+                <button class="carousel-prev" type="button" aria-label="Previous step" aria-controls="hero-slides"><span aria-hidden="true">‹</span></button>
+                <div class="carousel-dots" role="group" aria-label="Choose a solving step">
+                  ${slides.map(({label}, index) => `<button type="button" aria-label="Step ${index + 1}: ${label}" aria-controls="hero-slides"${index === 0 ? ' aria-current="step"' : ''}>${index + 1}</button>`).join('')}
+                </div>
+                <button class="carousel-next" type="button" aria-label="Next step" aria-controls="hero-slides"><span aria-hidden="true">›</span></button>
               </div>
-              <button class="carousel-arrow carousel-next" type="button" aria-label="Next slide" aria-controls="hero-slides"><span aria-hidden="true">→</span></button>
-            </div>
-            <p class="carousel-status" aria-live="polite" aria-atomic="true"></p>
+              <p class="carousel-status" aria-live="polite" aria-atomic="true"></p>
+              <p class="home-demo-note">Illustrated 6 × 6 teaching puzzle</p>
+            </section>
           </section>
-        </section>
-        <section class="rules">
-          <div class="wrap rules-grid">
-            <div><span class="rule-icon start" aria-hidden="true"></span><h2>Read the clues</h2><p>Each number tells you how many cells in that row or column contain track.</p></div>
-            <div><span class="rule-icon bend" aria-hidden="true"></span><h2>Lay the track</h2><p>Use straight pieces and corners to connect the square and circle.</p></div>
-            <div><span class="rule-icon finish" aria-hidden="true"></span><h2>Complete the route</h2><p>Join both ends with one unbroken line that satisfies every clue.</p></div>
-          </div>
-        </section>
-        <section class="wrap showcase" aria-labelledby="gallery-title">
-          <h2 id="gallery-title">A look at the game</h2>
-          <div class="gallery">
-            ${screenshot('first-route-light.webp', 'Partly built track on a light board, with clues and track tools', 'Light theme')}
-            ${screenshot('first-route-dark.webp', 'The same puzzle in dark mode, with a pale track on the grid', 'Dark theme')}
-            ${screenshot('puzzle-hint.webp', 'A hint points to a cell where a corner piece should go', 'A hint in play')}
-          </div>
-        </section>
-        <section class="wrap home-about">
-          <div><h2>About the game</h2><p>Inspired by Train Tracks puzzles, Let’s Fix Tracks gives you a grid, two endpoints, and just enough clues to work out what goes between them.</p></div>
-          <a class="text-link" href="${url('about/')}">More about the game <span aria-hidden="true">↗</span></a>
-        </section>`,
+
+          <section class="wrap home-principles" aria-label="The puzzle in three ideas">
+            <div><svg viewBox="0 0 64 48" aria-hidden="true"><rect x="9" y="12" width="42" height="28" rx="3"/><path d="M23 12V40M37 12V40M9 26H51"/><text x="28" y="9">2</text><path class="home-icon-track" d="M16 33H44"/></svg><h2>Read the clues</h2><p>Each number tells you how many cells in that row or column contain track.</p></div>
+            <div><svg viewBox="0 0 64 48" aria-hidden="true"><rect x="9" y="7" width="42" height="34" rx="3"/><path d="M30 7V41"/><path class="home-icon-track" d="M9 24H29Q41 24 41 36V41"/></svg><h2>Find your way</h2><p>Choose straights and corners. Let the clues guide each connection.</p></div>
+            <div><svg viewBox="0 0 64 48" aria-hidden="true"><path class="home-icon-track" d="M14 12H30Q40 12 40 24V26Q40 36 50 36"/><rect x="8" y="6" width="12" height="12"/><circle cx="51" cy="36" r="6"/></svg><h2>Complete the route</h2><p>Connect the square and circle with one line that satisfies every clue.</p></div>
+          </section>
+
+          <section class="home-gallery" aria-labelledby="gallery-title">
+            <div class="wrap">
+              <div class="home-gallery-heading"><div><p class="eyebrow">Inside the game</p><h2 id="gallery-title">A little space<br>to think.</h2></div><p>Light or dark. A hint when you need it.<br>The focus stays on the next connection.</p></div>
+              <div class="gallery">
+                ${screenshot('first-route-light.webp', 'A real game board in the light theme, with track pieces, clues and editing controls', 'Light theme')}
+                ${screenshot('first-route-dark.webp', 'The same puzzle and controls in the dark theme', 'Dark theme')}
+                <figure class="home-hint-shot"><a class="screenshot" href="${url('assets/puzzle-hint.webp')}" aria-label="View full screenshot: A hint in play">${artwork('hint-detail.webp', 880, 894, 'An actual hint highlights where a Corner NE piece should go')}</a><figcaption>A hint in play</figcaption><h3>A nudge in the right direction.</h3><p>Reveal a useful cell, then make the next move yourself.</p></figure>
+              </div>
+            </div>
+          </section>
+
+          <section class="wrap home-next">
+            <div class="home-next-route" aria-hidden="true"><svg viewBox="0 0 160 140"><path d="M25 25H71Q98 25 98 52V82Q98 109 125 109"/><rect x="15" y="15" width="20" height="20"/><circle cx="128" cy="109" r="11"/></svg></div>
+            <div><p class="eyebrow">Your first connection</p><h2>Every route starts<br>with a little curiosity.</h2><p>New to track puzzles? Our visual guide walks you through the board, the clues, and your first complete route.</p></div>
+            <a class="home-primary" href="${url('about/')}">Explore How to Play</a>
+          </section>
+        </div>`,
     },
     {
       route: 'about/', title: 'How to Play — A Visual Guide', description: 'Learn to read clues, connect track pieces and solve Let’s Fix Tracks puzzles with illustrated boards, controls and step-by-step examples.',

@@ -24,9 +24,9 @@ function pieceDiagram(index, id) {
   </svg>`;
 }
 
-function board(id, { stage = 4, highlight, invalid = false, markZeros = false } = {}) {
-  const visible = new Set(stage === 4 ? route.map((_, i) => i)
-    : stage === 3 ? [0, 1, 2, 3, 4, 6, 8] : [0, 6, 8]);
+function board(id, { stage = 4, highlight, invalid = false, markZeros = false, visiblePieces, label } = {}) {
+  const visible = new Set(visiblePieces ?? (stage === 4 ? route.map((_, i) => i)
+    : stage === 3 ? [0, 1, 2, 3, 4, 6, 8] : [0, 6, 8]));
   const occupied = route.filter((_, index) => visible.has(index));
   const rows = rowClues.map((_, r) => occupied.filter(([row]) => row === r).length);
   const columns = columnClues.map((_, c) => occupied.filter(([, column]) => column === c).length);
@@ -56,7 +56,7 @@ function board(id, { stage = 4, highlight, invalid = false, markZeros = false } 
   const clues = rowClues.map((clue, r) => `<text x="26" y="${77 + r * 48}" class="${rows[r] === clue ? 'guide-exact' : ''}">${clue}</text>`).join('') +
     columnClues.map((clue, c) => `<text x="${72 + c * 48}" y="30" class="${columns[c] === clue ? 'guide-exact' : ''}">${clue}</text>`).join('');
   return `<svg class="guide-board" viewBox="0 0 354 354" role="img" aria-labelledby="${id}-title ${id}-desc">
-    <title id="${id}-title">${invalid ? 'Invalid route with a mismatched corner' : stage === 4 ? 'Completed teaching board' : 'Teaching board, stage ' + stage}</title>
+    <title id="${id}-title">${label ?? (invalid ? 'Invalid route with a mismatched corner' : stage === 4 ? 'Completed teaching board' : 'Teaching board, stage ' + stage)}</title>
     <desc id="${id}-desc">Six rows and six columns. Row clues 0, 2, 3, 4, 0, 0. Column clues 2, 3, 3, 1, 0, 0.
       Square start at row 2, column 2 faces right. Circular destination at row 4, column 4 faces left.
       A fixed horizontal track is at row 4, column 2.
@@ -69,6 +69,8 @@ function board(id, { stage = 4, highlight, invalid = false, markZeros = false } 
     ${invalid ? '<rect x="142" y="142" width="52" height="52" rx="7" class="guide-error-ring"/>' : ''}
   </svg>`;
 }
+
+export { board as teachingBoard };
 
 function difficultyGrid(size, label) {
   const lines = Array.from({ length: size + 1 }, (_, i) =>

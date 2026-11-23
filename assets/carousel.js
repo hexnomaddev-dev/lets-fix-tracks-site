@@ -1,117 +1,114 @@
 (() => {
-  const showcase = document.querySelector('[data-carousel]');
-  const stage = showcase.querySelector('.carousel-stage');
-  const slides = [...stage.querySelectorAll('.carousel-slide')];
-  const controls = showcase.querySelector('.carousel-controls');
-  const indicators = [...controls.querySelectorAll('.carousel-dots button')];
-  const play = controls.querySelector('.carousel-play');
-  const caption = showcase.querySelector('.carousel-caption');
-  const status = showcase.querySelector('.carousel-status');
-  const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const interval = 6000;
+  const carousel = document.querySelector('[data-carousel]');
+  if (!carousel) return;
 
-  let current = 0;
+  const stage = carousel.querySelector('.carousel-stage');
+  const slides = [...stage.querySelectorAll('.carousel-slide')];
+  const controls = carousel.querySelector('.carousel-controls');
+  const steps = [...controls.querySelectorAll('.carousel-dots button')];
+  const playback = controls.querySelector('.carousel-play');
+  const caption = carousel.querySelector('.carousel-caption');
+  const description = carousel.querySelector('.carousel-description');
+  const counter = carousel.querySelector('.carousel-count');
+  const announcement = carousel.querySelector('.carousel-status');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+
+  let active = 0;
   let timer;
   let paused = false;
-  let resumeRequested = false;
-  let hovered = matchMedia('(hover: hover)').matches && showcase.matches(':hover');
-  let swipe;
+  let explicitResume = false;
+  let hovered = matchMedia('(hover: hover)').matches && carousel.matches(':hover');
+  let gesture;
 
   function schedule() {
     clearTimeout(timer);
-    if (paused || swipe || document.hidden || motion.matches) return;
-    if (!resumeRequested && (hovered || showcase.querySelector(':focus-visible'))) return;
-    timer = setTimeout(() => show(current + 1), interval);
+    if (paused || document.hidden || reducedMotion.matches || gesture) return;
+    if (!explicitResume && (hovered || carousel.querySelector(':focus-visible'))) return;
+    timer = setTimeout(() => select(active + 1), 8000);
   }
 
-  function show(index, manual = false) {
-    const next = (index + slides.length) % slides.length;
-    slides[current].classList.remove('is-active');
-    slides[current].setAttribute('aria-hidden', 'true');
-    indicators[current].removeAttribute('aria-current');
-    current = next;
-    slides[current].classList.add('is-active');
-    slides[current].setAttribute('aria-hidden', 'false');
-    indicators[current].setAttribute('aria-current', 'true');
-    caption.textContent = slides[current].dataset.caption;
-    if (manual) status.textContent = slides[current].getAttribute('aria-label');
+  function select(index, manual = false) {
+    active = (index + slides.length) % slides.length;
+    slides.forEach((slide, position) => {
+      const selected = position === active;
+      slide.classList.toggle('is-active', selected);
+      slide.setAttribute('aria-hidden', String(!selected));
+      if (selected) steps[position].setAttribute('aria-current', 'step');
+      else steps[position].removeAttribute('aria-current');
+    });
+    caption.textContent = slides[active].dataset.caption;
+    description.textContent = slides[active].dataset.description;
+    counter.textContent = (active + 1) + ' / ' + slides.length;
+    if (manual) announcement.textContent = slides[active].getAttribute('aria-label');
     schedule();
   }
 
-  function updateAutoplay() {
-    play.hidden = motion.matches;
+  function updatePlayback() {
+    playback.hidden = reducedMotion.matches;
     const label = paused ? 'Resume autoplay' : 'Pause autoplay';
-    play.setAttribute('aria-label', label);
-    play.title = label;
-    play.firstElementChild.textContent = paused ? '▶' : 'Ⅱ';
+    playback.setAttribute('aria-label', label);
+    playback.title = label;
+    playback.firstElementChild.textContent = paused ? '▶' : 'Ⅱ';
     schedule();
   }
 
-  controls.querySelector('.carousel-prev').addEventListener('click', () => show(current - 1, true));
-  controls.querySelector('.carousel-next').addEventListener('click', () => show(current + 1, true));
-  indicators.forEach((button, index) => button.addEventListener('click', () => show(index, true)));
-  play.addEventListener('click', () => {
+  controls.querySelector('.carousel-prev').addEventListener('click', () => select(active - 1, true));
+  controls.querySelector('.carousel-next').addEventListener('click', () => select(active + 1, true));
+  steps.forEach((button, index) => button.addEventListener('click', () => select(index, true)));
+  playback.addEventListener('click', () => {
     paused = !paused;
-    // An explicit resume works even while the pointer or keyboard focus is on this button.
-    resumeRequested = !paused;
-    updateAutoplay();
+    explicitResume = !paused;
+    updatePlayback();
   });
-  showcase.addEventListener('keydown', (event) => {
-    if (event.altKey || event.ctrlKey || event.metaKey || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+
+  carousel.addEventListener('keydown', (event) => {
+    if (event.altKey || event.ctrlKey || event.metaKey) return;
+    const destinations = { ArrowLeft: active - 1, ArrowRight: active + 1, Home: 0, End: slides.length - 1 };
+    if (!Object.hasOwn(destinations, event.key)) return;
     event.preventDefault();
-    show(current + (event.key === 'ArrowLeft' ? -1 : 1), true);
+    select(destinations[event.key], true);
   });
-  showcase.addEventListener('pointerenter', (event) => {
+  carousel.addEventListener('pointerenter', (event) => {
     if (event.pointerType !== 'mouse') return;
     hovered = true;
-    resumeRequested = false;
+    explicitResume = false;
     schedule();
   });
-  showcase.addEventListener('pointerleave', (event) => {
+  carousel.addEventListener('pointerleave', (event) => {
     if (event.pointerType !== 'mouse') return;
     hovered = false;
     schedule();
   });
-  showcase.addEventListener('focusin', () => {
-    resumeRequested = false;
+  carousel.addEventListener('focusin', () => {
+    explicitResume = false;
     schedule();
   });
-  showcase.addEventListener('focusout', () => queueMicrotask(schedule));
+  carousel.addEventListener('focusout', () => queueMicrotask(schedule));
 
   stage.addEventListener('pointerdown', (event) => {
     if (event.pointerType !== 'touch' || !event.isPrimary) return;
-    swipe = { id: event.pointerId, x: event.clientX, y: event.clientY };
+    gesture = { id: event.pointerId, x: event.clientX, y: event.clientY };
     stage.setPointerCapture(event.pointerId);
     schedule();
   });
   stage.addEventListener('pointerup', (event) => {
-    if (swipe?.id !== event.pointerId) return;
-    const dx = event.clientX - swipe.x;
-    const dy = event.clientY - swipe.y;
-    swipe = undefined;
-    if (Math.abs(dx) >= 40 && Math.abs(dx) > 1.3 * Math.abs(dy)) {
-      show(current + (dx > 0 ? -1 : 1), true);
+    if (gesture?.id !== event.pointerId) return;
+    const horizontal = event.clientX - gesture.x;
+    const vertical = event.clientY - gesture.y;
+    gesture = undefined;
+    if (Math.abs(horizontal) >= 40 && Math.abs(horizontal) > Math.abs(vertical) * 1.3) {
+      select(active + (horizontal < 0 ? 1 : -1), true);
     } else {
       schedule();
     }
   });
   stage.addEventListener('lostpointercapture', (event) => {
-    if (swipe?.id !== event.pointerId) return;
-    swipe = undefined;
+    if (gesture?.id !== event.pointerId) return;
+    gesture = undefined;
     schedule();
   });
-
-  for (const image of stage.querySelectorAll('img')) {
-    const showFallback = () => {
-      image.hidden = true;
-      image.nextElementSibling.hidden = false;
-    };
-    if (image.complete && !image.naturalWidth) showFallback();
-    else image.addEventListener('error', showFallback, { once: true });
-  }
-
   document.addEventListener('visibilitychange', schedule);
-  motion.addEventListener('change', updateAutoplay);
+  reducedMotion.addEventListener('change', updatePlayback);
   controls.hidden = false;
-  updateAutoplay();
+  updatePlayback();
 })();
