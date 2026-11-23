@@ -30,12 +30,12 @@ if (releaseBuild && (!site || drafts.size)) {
     ([...drafts].map((route) => '/' + route).join(', ') || 'none'));
   process.exit(1);
 }
-const nav = [['', 'Home'], ['about/', 'About'], ['support/', 'Support']];
+const nav = [['', 'Home'], ['about/', 'How to Play'], ['support/', 'Support']];
 const brand = `<a class="brand" href="${url('')}"><img src="${url('assets/icon.png')}" width="36" height="36" alt="">Let’s Fix Tracks</a>`;
 const assets = [
   'style.css', 'carousel.js', 'icon.png', 'dm-sans.ttf', 'DM_Sans_OFL.txt',
   'first-route-board.webp', 'first-route-dark-board.webp', 'hint-detail.webp', 'difficulty-detail.webp',
-  'first-route-light.webp', 'first-route-dark.webp', 'puzzle-hint.webp',
+  'first-route-light.webp', 'first-route-dark.webp', 'puzzle-hint.webp', 'guide-controls.webp',
 ];
 const sitemap = site && routes.filter(({ route }) => route !== '404.html')
   .map(({ route }) => `  <url><loc>${escape(new URL(route, site).href)}</loc></url>`).join('\n');

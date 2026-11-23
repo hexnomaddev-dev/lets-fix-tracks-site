@@ -2,11 +2,14 @@ name: GitHub Pages
 
 on:
   pull_request:
-  # Official daily archive push deployments
+  # Publish website and official daily archive updates.
   push:
     branches: [main]
     paths:
       - 'daily-puzzles/**'
+      - '*.mjs'
+      - 'assets/**'
+      - 'legal/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 

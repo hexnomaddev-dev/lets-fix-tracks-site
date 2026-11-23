@@ -1,4 +1,5 @@
 import { readFileSync } from 'node:fs';
+import { howToPlay } from './how-to-play.mjs';
 
 export const release = {
   developer: 'Independent developer',
@@ -98,17 +99,8 @@ export function pages({ url, artwork, download, developer, supportEmail }) {
         </section>`,
     },
     {
-      route: 'about/', title: 'About the game', description: 'Learn how to solve a Let’s Fix Tracks puzzle and what inspired the game.',
-      body: `<article class="wrap reading about-page"><h1>About the game</h1>
-        <p class="intro">Let’s Fix Tracks is a railway logic puzzle for Android, inspired by the Train Tracks puzzle family.</p>
-        <div class="route-divider" aria-hidden="true"><span></span></div>
-        <section><h2>How to play</h2>
-          <ol><li>Find the square starting point and the circular endpoint.</li><li>Use the number beside each row and above each column to work out how many cells contain track. Count the endpoints and any fixed pieces.</li><li>Place straights and corners to join the endpoints in a single continuous route. The route must satisfy every clue without branching or crossing itself.</li></ol>
-        </section>
-        <section><h2>At the board</h2><p>Mark cells you know are empty, use undo and redo to revisit a move, or ask for a hint when you’re stuck. Start with an easier board and move up to more demanding puzzles when you’re ready.</p></section>
-        <section><h2>Design</h2><p>Warm paper, muted colours and fine grid lines keep the focus on the track you’re building. Light and dark themes carry that same approach through the game.</p></section>
-        <section><h2>Developer</h2><p>${developer}</p><p>For questions about the game or to report an issue, visit <a href="${url('support/')}">Support</a>.</p></section>
-      </article>`,
+      route: 'about/', title: 'How to Play — A Visual Guide', description: 'Learn to read clues, connect track pieces and solve Let’s Fix Tracks puzzles with illustrated boards, controls and step-by-step examples.',
+      body: howToPlay({ url, artwork, download }),
     },
     {
       route: 'privacy/', title: 'Privacy Policy', description: 'Privacy information for the Let’s Fix Tracks Android game.',
