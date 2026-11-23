@@ -1,4 +1,5 @@
-import { copyFileSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { copyFileSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { dirname } from 'node:path';
 import { pages, release } from './content.mjs';
 import { copyDailyArchive } from './copy-daily-archive.mjs';
@@ -32,6 +33,16 @@ if (releaseBuild && (!site || drafts.size)) {
 }
 const nav = [['', 'Home'], ['about/', 'How to Play'], ['support/', 'Support']];
 const brand = `<a class="brand" href="${url('')}"><img src="${url('assets/icon.png')}" width="36" height="36" alt="">Let’s Fix Tracks</a>`;
+// New content gets a new URL so browsers cannot reuse styles from an older release.
+function versionedAsset(filename) {
+  const digest = createHash('sha256').update(readFileSync(`assets/${filename}`)).digest('hex').slice(0, 12);
+  const extension = filename.lastIndexOf('.');
+  return `${filename.slice(0, extension)}.${digest}${filename.slice(extension)}`;
+}
+const assetNames = {
+  'style.css': versionedAsset('style.css'),
+  'carousel.js': versionedAsset('carousel.js'),
+};
 const assets = [
   'style.css', 'carousel.js', 'icon.png', 'dm-sans.ttf', 'DM_Sans_OFL.txt',
   'first-route-board.webp', 'first-route-dark-board.webp', 'hint-detail.webp', 'difficulty-detail.webp',
@@ -41,7 +52,7 @@ const sitemap = site && routes.filter(({ route }) => route !== '404.html')
   .map(({ route }) => `  <url><loc>${escape(new URL(route, site).href)}</loc></url>`).join('\n');
 
 mkdirSync('dist/assets', { recursive: true });
-for (const asset of assets) copyFileSync(`assets/${asset}`, `dist/assets/${asset}`);
+for (const asset of assets) copyFileSync(`assets/${asset}`, `dist/assets/${assetNames[asset] ?? asset}`);
 for (const { route, title, description, body } of routes) {
   const fullTitle = route === '' ? title : `${title} | Let’s Fix Tracks`;
   const canonical = site && route !== '404.html' ? escape(new URL(route, site).href) : null;
@@ -64,7 +75,7 @@ for (const { route, title, description, body } of routes) {
   <meta property="og:image:alt" content="The First Route board mid-solve">` : ''}
   ${route === '404.html' || drafts.has(route) ? '<meta name="robots" content="noindex">' : ''}
   <link rel="icon" href="${url('assets/icon.png')}" type="image/png">
-  <link rel="stylesheet" href="${url('assets/style.css')}">
+  <link rel="stylesheet" href="${url(`assets/${assetNames['style.css']}`)}">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -82,7 +93,7 @@ for (const { route, title, description, body } of routes) {
       <li><a href="${url('terms/')}"${route === 'terms/' ? ' aria-current="page"' : ''}>Terms &amp; Conditions</a></li>
     </ul></nav>
   </div></footer>
-  ${route === '' ? `<script src="${url('assets/carousel.js')}" defer></script>` : ''}
+  ${route === '' ? `<script src="${url(`assets/${assetNames['carousel.js']}`)}" defer></script>` : ''}
 </body>
 </html>
 `);
