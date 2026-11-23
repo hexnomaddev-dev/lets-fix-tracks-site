@@ -269,6 +269,6 @@ a.download:hover { color: #fffdf8; background: #3d5643; }
 }
 @media (min-width: 58rem) {
   .guide-controls-layout { grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .guide-pieces { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1rem; }
+  .guide-pieces { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 1rem; }
   .guide-rule-list { grid-template-columns: 1fr 1fr; column-gap: 2.5rem; }
 }

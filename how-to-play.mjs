@@ -115,9 +115,27 @@ export function howToPlay({ url, artwork, download }) {
     </section>
 
     <section id="pieces" class="guide-section">
-      <div class="guide-section-heading"><p class="eyebrow">Six shapes</p><h2>A straight, or a turn.</h2><p>North is up, east is right, south is down and west is left. Choose a piece whose two open ends face the cells you want to connect.</p></div>
-      <div class="guide-pieces">${pieces.map(([, name, ports], index) => `<figure>${pieceDiagram(index, 'piece-' + index)}<figcaption><strong>${name}</strong><span>${ports}</span></figcaption></figure>`).join('')}</div>
-      <div class="guide-two-notes"><p><strong>Straights</strong> join opposite sides of a cell.</p><p><strong>Corners</strong> join adjacent sides. Neighbouring pieces must meet at the same shared edge.</p></div>
+      <div class="guide-section-heading"><p class="eyebrow">Your palette</p><h2>Mark a possibility. Choose a shape.</h2><p>The palette starts with a placeholder marker, followed by six track shapes. North is up, east is right, south is down and west is left.</p></div>
+      <div class="guide-pieces">
+        <figure>
+          <svg viewBox="-6 -6 60 60" role="img" aria-labelledby="piece-placeholder">
+            <title id="piece-placeholder">Possible track placeholder. A dashed cross with a soft circular centre marks an undecided cell.</title>
+            <rect x="0" y="0" width="48" height="48" rx="5" class="guide-cell"/>
+            <g fill="#5a7a61">
+              <circle cx="24" cy="24" r="14.88" opacity=".10"/>
+              <circle cx="24" cy="24" r="9.6" opacity=".16"/>
+              <circle cx="24" cy="24" r="4.8" opacity=".35"/>
+            </g>
+            <path d="M24 24V5.76M24 24H42.24M24 24V42.24M24 24H5.76" fill="none" stroke="#4c6753" stroke-opacity=".55" stroke-width="1.4" stroke-dasharray="4.8 3.6" stroke-linecap="round"/>
+            <circle cx="24" cy="24" r="2.16" fill="#4c6753"/>
+            <circle cx="24" cy="24" r="3.6" fill="none" stroke="#4c6753" stroke-opacity=".65"/>
+          </svg>
+          <figcaption><strong>Possible track</strong><span>Placeholder marker</span></figcaption>
+        </figure>
+        ${pieces.map(([, name, ports], index) => `<figure>${pieceDiagram(index, 'piece-' + index)}<figcaption><strong>${name}</strong><span>${ports}</span></figcaption></figure>`).join('')}
+      </div>
+      <p class="guide-note"><strong>Keep a possibility in mind.</strong> Select Possible track and tap an undecided cell to add this marker. Tap it again with Possible track selected to remove it, or place a real track piece there when you know its shape. The marker contributes zero to the row and column totals.</p>
+      <div class="guide-two-notes"><p><strong>Straights</strong> join opposite sides of a cell.</p><p><strong>Corners</strong> join adjacent sides. Choose a shape whose connections align with the pieces in neighbouring cells.</p></div>
     </section>
 
     <section id="build-route" class="guide-section">
