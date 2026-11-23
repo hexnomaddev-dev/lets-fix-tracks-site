@@ -224,6 +224,14 @@ a.download:hover { color: #fffdf8; background: #3d5643; }
 .guide-pieces figcaption strong { color: var(--ink); font-size: 1rem; }
 .guide-two-notes { display: grid; gap: .7rem; color: var(--muted); margin-top: 1.6rem; }
 .guide-two-notes strong { color: var(--ink); }
+.guide-adjacency { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.guide-adjacency > p { margin-top: .65rem; max-width: 70ch; color: var(--muted); }
+.guide-connections { display: grid; gap: 1.5rem; margin-top: 1.5rem; }
+.guide-connections svg { display: block; width: min(100%, 18rem); margin-inline: auto; }
+.guide-connections figcaption { max-width: 35ch; margin-inline: auto; }
+.guide-connections strong, .guide-connections span { display: block; }
+.guide-connections strong { color: var(--forest); font-size: 1rem; margin-bottom: .3rem; }
+.guide-size-context { margin-top: 1rem; max-width: 75ch; color: var(--muted); }
 .guide-stages { display: grid; gap: 1.8rem; list-style: none; padding: 0; margin: 0; }
 .guide-stages > li { min-width: 0; }
 .guide-step-title { display: flex; align-items: center; gap: .65rem; margin-bottom: .9rem; min-height: 3.3rem; }
@@ -266,6 +274,7 @@ a.download:hover { color: #fffdf8; background: #3d5643; }
   .guide-pieces { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .guide-difficulties { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .guide-two-notes { grid-template-columns: 1fr 1fr; }
+  .guide-connections { grid-template-columns: 1fr 1fr; }
 }
 @media (min-width: 58rem) {
   .guide-controls-layout { grid-template-columns: 1fr 1fr; gap: 2rem; }

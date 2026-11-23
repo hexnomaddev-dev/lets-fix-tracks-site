@@ -9,7 +9,7 @@ export const release = {
 
 const slides = [
   {
-    label: 'Actual gameplay', caption: 'The First Route · 4 × 4',
+    label: 'Actual gameplay', caption: 'The First Route · earlier 4 × 4 preview',
     images: [['first-route-board.webp', 880, 894, 'A partly laid route with numbered clues, a square start and a circular endpoint.']],
   },
   {

@@ -85,7 +85,7 @@ export function howToPlay({ url, artwork, download }) {
       <p class="guide-lead">Connect the square starting point to the circular destination by building one continuous railway route that satisfies every row and column clue.</p>
     </header>
     <div class="guide-board-intro">
-      <figure class="guide-paper">${board('welcome', { stage: 3 })}<figcaption>A small teaching puzzle, partway through a solve.</figcaption></figure>
+      <figure class="guide-paper">${board('welcome', { stage: 3 })}<figcaption>A 6 × 6 teaching example, partway through a solve.</figcaption></figure>
       <div class="guide-board-notes">
         <h2>Meet your board</h2>
         <dl class="guide-legend">
@@ -136,6 +136,31 @@ export function howToPlay({ url, artwork, download }) {
       </div>
       <p class="guide-note"><strong>Keep a possibility in mind.</strong> Select Possible track and tap an undecided cell to add this marker. Tap it again with Possible track selected to remove it, or place a real track piece there when you know its shape. The marker contributes zero to the row and column totals.</p>
       <div class="guide-two-notes"><p><strong>Straights</strong> join opposite sides of a cell.</p><p><strong>Corners</strong> join adjacent sides. Choose a shape whose connections align with the pieces in neighbouring cells.</p></div>
+      <div class="guide-adjacency">
+        <h3>Neighbours connect only when their ends meet.</h3>
+        <p>Two track cells can sit beside each other without joining. Check the connection directions at their shared edge.</p>
+        <div class="guide-connections">
+          <figure>
+            <svg viewBox="-6 -6 108 60" role="img" aria-labelledby="neighbours-connected">
+              <title id="neighbours-connected">Connected neighbours. Two horizontal pieces meet across the shared edge.</title>
+              <rect width="48" height="48" rx="5" class="guide-cell"/>
+              <rect x="48" width="48" height="48" rx="5" class="guide-cell"/>
+              <path d="M0 24H96" class="guide-track"/>
+            </svg>
+            <figcaption><strong>Connected</strong><span>The left piece faces east; the right piece faces west. Their ends meet.</span></figcaption>
+          </figure>
+          <figure>
+            <svg viewBox="-6 -6 108 60" role="img" aria-labelledby="neighbours-separate">
+              <title id="neighbours-separate">Separate neighbours. Two vertical pieces sit side by side. Neither has a connection across their shared edge.</title>
+              <rect width="48" height="48" rx="5" class="guide-cell"/>
+              <rect x="48" width="48" height="48" rx="5" class="guide-cell"/>
+              <path d="M24 0V48M72 0V48" class="guide-track"/>
+            </svg>
+            <figcaption><strong>Side by side, separate</strong><span>Both pieces face north and south. Neither opens toward the other.</span></figcaption>
+          </figure>
+        </div>
+        <p class="guide-note">Separate neighbours are allowed. If one piece does point toward its neighbour, that neighbour must point back. A one-sided connection is a mismatch.</p>
+      </div>
     </section>
 
     <section id="build-route" class="guide-section">
@@ -194,6 +219,8 @@ export function howToPlay({ url, artwork, download }) {
     <section id="difficulty" class="guide-section">
       <div class="guide-section-heading"><p class="eyebrow">Room to think</p><h2>Four sizes. The same rules.</h2><p>Begin with Easy, then try a larger board. These grids share one scale, so you can see how the solving space grows.</p></div>
       <div class="guide-difficulties">${[[6, 'Easy'], [9, 'Medium'], [11, 'Hard'], [13, 'Expert']].map(([size, name]) => difficultyGrid(size, name)).join('')}</div>
+      <p class="guide-note"><strong>Why does Expert take more thought?</strong> Its 13 × 13 board has 169 cells, compared with Easy’s 36. A larger board gives you more possible routes to consider. Compare several row and column clues together, keep useful marks, and check connections as you go. The route rules stay the same.</p>
+      <p class="guide-size-context">The 6 × 6 board in this guide is a teaching example. The homepage’s 4 × 4 image is an earlier gameplay preview. The current difficulty sizes are shown above.</p>
     </section>
 
     <section class="guide-finish guide-section">
