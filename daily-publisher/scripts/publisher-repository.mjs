@@ -55,7 +55,9 @@ export class PublisherRepository {
       return this.g(['commit-tree',tree,'-p',parent],{input:message+'\n'}).trim();
     } finally { if(existsSync(index))unlinkSync(index); }
   }
-  push(commit) { this.g(['push','origin',commit+':refs/heads/'+this.config.branch]); }
+  push(commit) {
+    pushWithTransientRetry(args => this.g(args), commit, this.config.branch);
+  }
   assertOwner(ref) { const lock=this.json(ref,LOCK);if(!this.owner||lock?.owner!==this.owner||Date.parse(lock.expiresAt)<=this.clock().getTime())throw new Error('Repository lock lost; stop and reconcile.'); }
   async acquire({owner=randomUUID(),kind='native',runId=null}={}) {
     const head=this.fetch(), prior=this.json(head,LOCK),now=this.clock().getTime();
@@ -96,5 +98,28 @@ export class PublisherRepository {
   syncCheckout() {
     if(this.g(['status','--porcelain=v1','--untracked-files=all']).trim())throw new Error('Website checkout has changes; preserve and inspect them before publishing.');
     const head=this.fetch();this.g(['merge','--ff-only',head]);
+  }
+}
+
+
+// Retry the identical commit only for GitHub's transient ref-update failure.
+// Ordinary fast-forward checks still reject concurrent writes and policy failures.
+export function pushWithTransientRetry(run, commit, branch, {
+  wait = milliseconds => Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, milliseconds),
+} = {}) {
+  const ref = 'refs/heads/' + branch;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      run(['push', 'origin', commit + ':' + ref]);
+      return;
+    } catch (error) {
+      const detail = String(error.stderr || error.message || '');
+      if (!detail.includes('fatal error in commit_refs_rules')) throw error;
+      // A rejected/lost response can still follow a successful remote update.
+      const remote = run(['ls-remote', '--exit-code', 'origin', ref]).trim().split(/\s/)[0];
+      if (remote === commit) return;
+      if (attempt === 3) throw error;
+      wait(attempt * 1500);
+    }
   }
 }
