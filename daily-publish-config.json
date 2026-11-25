@@ -1,0 +1,9 @@
+{
+  "format": "lft.publisher-config",
+  "version": 1,
+  "repository": "hexnomaddev-dev/lets-fix-tracks-site",
+  "branch": "main",
+  "baseUrl": "https://hexnomaddev-dev.github.io/lets-fix-tracks-site/",
+  "pagesWorkflow": "pages.yml",
+  "publicKey": "-----BEGIN PUBLIC KEY-----\nMIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAolpiSt5+4bm+8mHw3IY3\nKHbkIaNBEPXQiokZxTdVpd7hAxss6AwgNs+txC57kjhmNX1Bv7r2+DBKFIMAKBP+\nVQk1HhCSk1yGCU7OH5p298MLk3wQXgTcHtC3H0HbwoBl+ekS1tB7pNo5grgbAJg6\n3BjlguByaQVuOHASfceHJlNA+N5TndV2g/HeHKbha+Esek55eJBQUQoa+Aip2Puw\nl1r/nSHGq0VVFj/84Vc1mdBr7ybOZUkqFB2Wgz4VxZSX2oLiLihTw4kpKcQuGiYL\ncCrvuLwQVDKg/96JUVW9g7dv1Wd6wuRdTIeolYxZRQsWiMGJvtcrQtbkCBqSYrwz\nkLkYChd6FAML7g0QkpqbatqhjojUl7u4tggZxAYteMOn9MiiD9qkFgDXGQqKsDUw\nSK/Trnw90DsdD9diPSKKfRh78LvzkOByQAzg9ofHBX+G6PNQGH49egakwgPrb1Yk\nV0aexEIdHgqvm+odQWwjOVSIEaLYEUMWWrIPpHZ8Ew01AgMBAAE=\n-----END PUBLIC KEY-----\n"
+}

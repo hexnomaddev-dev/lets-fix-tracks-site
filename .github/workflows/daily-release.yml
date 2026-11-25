@@ -1,0 +1,38 @@
+name: Scheduled Daily Puzzle Release
+on:
+  schedule:
+    - cron: '3-58/5 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: official-daily-release
+  cancel-in-progress: false
+jobs:
+  release:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write
+      actions: write
+      pages: read
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          ref: main
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Install pinned validator
+        run: npm ci --ignore-scripts --prefix daily-publisher
+      - name: Configure release commit identity
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - name: Release due UTC packages sequentially
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DAILY_QUEUE_PRIVATE_KEYS: ${{ secrets.DAILY_QUEUE_PRIVATE_KEYS }}
+        run: node daily-publisher/scripts/publisher-scheduled.mjs

@@ -1,8 +1,9 @@
 name: GitHub Pages
+run-name: GitHub Pages · ${{ inputs.publication_correlation || github.sha }}
 
 on:
   pull_request:
-  # Publish website and official daily archive updates.
+  # Official daily archive push deployments
   push:
     branches: [main]
     paths:
@@ -11,7 +12,14 @@ on:
       - 'assets/**'
       - 'legal/**'
       - '.github/workflows/pages.yml'
+      - 'daily-publisher/**'
+      - 'daily-publish-config.json'
   workflow_dispatch:
+    inputs:
+      publication_correlation:
+        description: Daily Publisher deployment correlation (blank for manual deployment)
+        type: string
+        required: false
 
 permissions:
   contents: read
@@ -31,9 +39,18 @@ jobs:
         run: |
           git log --first-parent --full-history --diff-merges=first-parent --format= --name-status --no-renames HEAD -- daily-puzzles/ |
             awk 'NF && $1 != "A" { print "Published archive path was changed: " $0; bad=1 } END { exit bad }'
+      - name: Enforce immutable approved packages and receipts
+        shell: bash
+        run: |
+          git log --first-parent --full-history --diff-merges=first-parent --format= --name-status --no-renames HEAD -- daily-publish-queue/packages/ daily-publish-queue/batches/ daily-publish-queue/receipts/ |
+            awk 'NF && $1 != "A" { print "Immutable Publisher path was changed: " $0; bad=1 } END { exit bad }'
       - uses: actions/setup-node@v6
         with:
           node-version: '24'
+      - name: Install pinned package validator
+        run: npm ci --ignore-scripts --prefix daily-publisher
+      - name: Validate all archived packages
+        run: node daily-publisher/scripts/check-publisher-archive.mjs
       - uses: actions/configure-pages@v5
         if: github.event_name != 'pull_request'
         id: pages
@@ -44,6 +61,7 @@ jobs:
         run: |
           node build.mjs $RELEASE_FLAG
           node check.mjs
+          node daily-publisher/scripts/check-publisher-archive.mjs --artifact
       - uses: actions/upload-pages-artifact@v4
         if: github.event_name != 'pull_request'
         with:

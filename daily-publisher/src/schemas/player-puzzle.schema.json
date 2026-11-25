@@ -1,0 +1,210 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://letsfixtracks.game/schemas/player-puzzle.v1.schema.json",
+  "title": "Let's Fix Tracks \u2014 Player-Facing Puzzle Schema (v1.0.0)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "schemaVersion",
+    "puzzleId",
+    "title",
+    "difficulty",
+    "gridSize",
+    "terminals",
+    "clues",
+    "givens"
+  ],
+  "properties": {
+    "format": {
+      "const": "lets-fix-tracks.player-puzzle"
+    },
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "puzzleId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "difficulty": {
+      "enum": [
+        "easy",
+        "medium",
+        "hard",
+        "expert"
+      ]
+    },
+    "gridSize": {
+      "enum": [
+        6,
+        9,
+        11,
+        13
+      ]
+    },
+    "terminals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start",
+        "destination"
+      ],
+      "properties": {
+        "start": {
+          "$ref": "#/$defs/terminalEndpoint"
+        },
+        "destination": {
+          "$ref": "#/$defs/terminalEndpoint"
+        }
+      }
+    },
+    "clues": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rows",
+        "cols"
+      ],
+      "properties": {
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "cols": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "givens": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixedTracks",
+        "fixedEmpty"
+      ],
+      "properties": {
+        "fixedTracks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "row",
+              "col",
+              "piece"
+            ],
+            "properties": {
+              "row": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "col": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "piece": {
+                "$ref": "#/$defs/trackPiece"
+              }
+            }
+          }
+        },
+        "fixedEmpty": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "row",
+              "col"
+            ],
+            "properties": {
+              "row": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "col": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "difficulty": { "const": "easy" } } },
+      "then": { "properties": { "gridSize": { "const": 6 } } }
+    },
+    {
+      "if": { "properties": { "difficulty": { "const": "medium" } } },
+      "then": { "properties": { "gridSize": { "const": 9 } } }
+    },
+    {
+      "if": { "properties": { "difficulty": { "const": "hard" } } },
+      "then": { "properties": { "gridSize": { "const": 11 } } }
+    },
+    {
+      "if": { "properties": { "difficulty": { "const": "expert" } } },
+      "then": { "properties": { "gridSize": { "const": 13 } } }
+    }
+  ],
+  "$defs": {
+    "trackPiece": {
+      "enum": [
+        "HORIZONTAL",
+        "VERTICAL",
+        "TOP_LEFT",
+        "TOP_RIGHT",
+        "BOTTOM_LEFT",
+        "BOTTOM_RIGHT"
+      ]
+    },
+    "cardinalSide": {
+      "enum": [
+        "NORTH",
+        "EAST",
+        "SOUTH",
+        "WEST"
+      ]
+    },
+    "terminalEndpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "row",
+        "col",
+        "piece",
+        "externalSide"
+      ],
+      "properties": {
+        "row": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "col": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "piece": {
+          "$ref": "#/$defs/trackPiece"
+        },
+        "externalSide": {
+          "$ref": "#/$defs/cardinalSide"
+        }
+      }
+    }
+  }
+}
