@@ -1,0 +1,43 @@
+{
+  "format": "lft.publisher-batch",
+  "version": 1,
+  "batchId": "0f697642ad50e959057296fd78c54377f36c199d544033e35ee1ce092b08e6e7",
+  "createdAt": "2026-11-25T07:14:06.585Z",
+  "packages": [
+    {
+      "date": "2026-11-26",
+      "packageId": "367043a20340506afb70791459a3332a2db9b4f4f1f84e1bd868524377c20582",
+      "path": "daily-publish-queue/packages/2026-11-26/367043a20340506afb70791459a3332a2db9b4f4f1f84e1bd868524377c20582.json",
+      "sha256": "4f5c94fe0b0793dd75e7fb4e34c1feadc9c9c8945c82e0d569accee73b18993e",
+      "backfill": false
+    },
+    {
+      "date": "2026-11-27",
+      "packageId": "f0ba59abdb2e15375ed58d1fd4bd9993bbf8a0d14494468b4100469094c34629",
+      "path": "daily-publish-queue/packages/2026-11-27/f0ba59abdb2e15375ed58d1fd4bd9993bbf8a0d14494468b4100469094c34629.json",
+      "sha256": "c83cb22a87ba567ecc5ed962139b9780eebb67e914604c100ad7580c7e06e104",
+      "backfill": false
+    },
+    {
+      "date": "2026-11-28",
+      "packageId": "f047c2e149510a81802d9b1578901c4f335993e930350355ce2e768169bc56e3",
+      "path": "daily-publish-queue/packages/2026-11-28/f047c2e149510a81802d9b1578901c4f335993e930350355ce2e768169bc56e3.json",
+      "sha256": "88dff61501cdf40e56d31a6d2c9955d495904dfbc35e60de1eea5e4f7a12253a",
+      "backfill": false
+    },
+    {
+      "date": "2026-11-29",
+      "packageId": "b79fe5c51db8efaa437500656fdfaf5820f281c762bcbaf2875fbc8b1469c4e5",
+      "path": "daily-publish-queue/packages/2026-11-29/b79fe5c51db8efaa437500656fdfaf5820f281c762bcbaf2875fbc8b1469c4e5.json",
+      "sha256": "70c77779d6a8345f20cc55ef6fa1cddfb70cc169808c7781a4d110f70c90d8c2",
+      "backfill": false
+    },
+    {
+      "date": "2026-11-30",
+      "packageId": "8bfa492bf4c33e42a82054f06a7e1163f0676edba710138e78171a5ad7774043",
+      "path": "daily-publish-queue/packages/2026-11-30/8bfa492bf4c33e42a82054f06a7e1163f0676edba710138e78171a5ad7774043.json",
+      "sha256": "12fb5598664cbe43103645e9850d3e8acd479670240cc0f778c14d3b93c257e1",
+      "backfill": false
+    }
+  ]
+}
