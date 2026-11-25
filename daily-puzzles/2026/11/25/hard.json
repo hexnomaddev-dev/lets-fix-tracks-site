@@ -1,0 +1,90 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-11-25_hard",
+  "title": "Along the Ridge",
+  "difficulty": "hard",
+  "gridSize": 11,
+  "terminals": {
+    "start": {
+      "row": 10,
+      "col": 2,
+      "piece": "BOTTOM_LEFT",
+      "externalSide": "SOUTH"
+    },
+    "destination": {
+      "row": 3,
+      "col": 10,
+      "piece": "BOTTOM_RIGHT",
+      "externalSide": "EAST"
+    }
+  },
+  "clues": {
+    "rows": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      3,
+      4,
+      4,
+      7,
+      9,
+      9
+    ],
+    "cols": [
+      2,
+      5,
+      4,
+      5,
+      3,
+      2,
+      1,
+      4,
+      5,
+      4,
+      3
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 10,
+        "col": 9,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 10,
+        "col": 7,
+        "piece": "TOP_RIGHT"
+      },
+      {
+        "row": 7,
+        "col": 1,
+        "piece": "VERTICAL"
+      },
+      {
+        "row": 8,
+        "col": 3,
+        "piece": "TOP_RIGHT"
+      },
+      {
+        "row": 8,
+        "col": 1,
+        "piece": "TOP_RIGHT"
+      },
+      {
+        "row": 9,
+        "col": 3,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 9,
+        "col": 1,
+        "piece": "HORIZONTAL"
+      }
+    ],
+    "fixedEmpty": []
+  }
+}

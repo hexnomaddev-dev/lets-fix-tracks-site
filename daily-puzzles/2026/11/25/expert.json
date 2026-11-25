@@ -1,0 +1,89 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-11-25_expert",
+  "title": "The Hush Between Trains",
+  "difficulty": "expert",
+  "gridSize": 13,
+  "terminals": {
+    "start": {
+      "row": 10,
+      "col": 0,
+      "piece": "BOTTOM_LEFT",
+      "externalSide": "WEST"
+    },
+    "destination": {
+      "row": 0,
+      "col": 8,
+      "piece": "TOP_RIGHT",
+      "externalSide": "NORTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      2,
+      2,
+      3,
+      3,
+      2,
+      6,
+      5,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3
+    ],
+    "cols": [
+      8,
+      8,
+      6,
+      1,
+      2,
+      3,
+      3,
+      2,
+      4,
+      2,
+      0,
+      0,
+      0
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 5,
+        "col": 0,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 10,
+        "col": 2,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 2,
+        "col": 8,
+        "piece": "VERTICAL"
+      },
+      {
+        "row": 9,
+        "col": 1,
+        "piece": "HORIZONTAL"
+      },
+      {
+        "row": 6,
+        "col": 2,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 5,
+        "col": 1,
+        "piece": "BOTTOM_LEFT"
+      }
+    ],
+    "fixedEmpty": []
+  }
+}

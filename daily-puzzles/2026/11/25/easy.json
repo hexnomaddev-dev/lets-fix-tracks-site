@@ -1,0 +1,73 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-11-25_easy",
+  "title": "Where the Hedges End",
+  "difficulty": "easy",
+  "gridSize": 6,
+  "terminals": {
+    "start": {
+      "row": 0,
+      "col": 4,
+      "piece": "VERTICAL",
+      "externalSide": "NORTH"
+    },
+    "destination": {
+      "row": 4,
+      "col": 5,
+      "piece": "BOTTOM_RIGHT",
+      "externalSide": "EAST"
+    }
+  },
+  "clues": {
+    "rows": [
+      1,
+      2,
+      4,
+      4,
+      5,
+      4
+    ],
+    "cols": [
+      0,
+      3,
+      4,
+      3,
+      6,
+      4
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 5,
+        "col": 4,
+        "piece": "HORIZONTAL"
+      },
+      {
+        "row": 4,
+        "col": 2,
+        "piece": "BOTTOM_LEFT"
+      },
+      {
+        "row": 3,
+        "col": 2,
+        "piece": "TOP_RIGHT"
+      }
+    ],
+    "fixedEmpty": [
+      {
+        "row": 0,
+        "col": 5
+      },
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 5,
+        "col": 0
+      }
+    ]
+  }
+}
