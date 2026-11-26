@@ -1,0 +1,11 @@
+{
+  "recoveryHistory": [],
+  "date": "2026-11-26",
+  "packageId": "367043a20340506afb70791459a3332a2db9b4f4f1f84e1bd868524377c20582",
+  "batchId": "0f697642ad50e959057296fd78c54377f36c199d544033e35ee1ce092b08e6e7",
+  "mode": "scheduled",
+  "schedulerRunId": 45729117169,
+  "phase": "Reconcile repository and approved bytes",
+  "state": "PUBLISHING",
+  "updatedAt": "2026-11-26T00:29:52.076Z"
+}
