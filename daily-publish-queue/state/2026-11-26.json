@@ -5,12 +5,19 @@
   "batchId": "0f697642ad50e959057296fd78c54377f36c199d544033e35ee1ce092b08e6e7",
   "mode": "scheduled",
   "schedulerRunId": 45729117169,
-  "phase": "Wait for GitHub Pages",
-  "state": "DEPLOYMENT_PENDING",
-  "updatedAt": "2026-11-26T00:30:00.351Z",
+  "phase": "Verify all five public HTTPS files",
+  "state": "VERIFICATION_PENDING",
+  "updatedAt": "2026-11-26T00:30:31.582Z",
   "commit": "a0bff4a7e832b69b0a620012affadcd5a1ddd7c0",
   "deploymentIntent": {
     "correlation": "d3688559-90b0-4016-97eb-d246784b159c",
     "requestedAt": "2026-11-26T00:30:00.351Z"
+  },
+  "deployment": {
+    "status": "success",
+    "url": "https://github.com/hexnomaddev-dev/lets-fix-tracks-site/actions/runs/45729164722",
+    "runId": 45729164722,
+    "commit": "45819cda0678aa8ed1e3b9c93838de1e1ecd03a4",
+    "completedAt": "2026-11-26T00:30:29Z"
   }
 }
