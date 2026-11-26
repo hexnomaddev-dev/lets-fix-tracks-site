@@ -1,0 +1,95 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-11-26_hard",
+  "title": "An Empty Engine House",
+  "difficulty": "hard",
+  "gridSize": 11,
+  "terminals": {
+    "start": {
+      "row": 9,
+      "col": 10,
+      "piece": "TOP_RIGHT",
+      "externalSide": "EAST"
+    },
+    "destination": {
+      "row": 0,
+      "col": 2,
+      "piece": "TOP_LEFT",
+      "externalSide": "NORTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      3,
+      4,
+      7,
+      8,
+      5,
+      3,
+      3,
+      3,
+      1,
+      1,
+      0
+    ],
+    "cols": [
+      2,
+      3,
+      3,
+      3,
+      3,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 5,
+        "col": 10,
+        "piece": "BOTTOM_LEFT"
+      },
+      {
+        "row": 6,
+        "col": 8,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 3,
+        "col": 5,
+        "piece": "HORIZONTAL"
+      },
+      {
+        "row": 3,
+        "col": 6,
+        "piece": "BOTTOM_LEFT"
+      },
+      {
+        "row": 4,
+        "col": 9,
+        "piece": "HORIZONTAL"
+      },
+      {
+        "row": 1,
+        "col": 3,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 2,
+        "col": 3,
+        "piece": "VERTICAL"
+      },
+      {
+        "row": 4,
+        "col": 10,
+        "piece": "TOP_LEFT"
+      }
+    ],
+    "fixedEmpty": []
+  }
+}

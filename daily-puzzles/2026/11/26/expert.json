@@ -1,0 +1,79 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-11-26_expert",
+  "title": "The Stillness Between Showers",
+  "difficulty": "expert",
+  "gridSize": 13,
+  "terminals": {
+    "start": {
+      "row": 1,
+      "col": 12,
+      "piece": "BOTTOM_RIGHT",
+      "externalSide": "EAST"
+    },
+    "destination": {
+      "row": 12,
+      "col": 6,
+      "piece": "BOTTOM_RIGHT",
+      "externalSide": "SOUTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      0,
+      1,
+      1,
+      2,
+      2,
+      6,
+      6,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2
+    ],
+    "cols": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      8,
+      7,
+      2,
+      2,
+      4,
+      6
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 9,
+        "col": 7,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 6,
+        "col": 8,
+        "piece": "BOTTOM_LEFT"
+      },
+      {
+        "row": 7,
+        "col": 8,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 11,
+        "col": 7,
+        "piece": "BOTTOM_RIGHT"
+      }
+    ],
+    "fixedEmpty": []
+  }
+}
