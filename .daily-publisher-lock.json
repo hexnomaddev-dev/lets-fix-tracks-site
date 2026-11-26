@@ -1,8 +1,6 @@
 {
   "format": "lft.publisher-lock",
   "version": 1,
-  "owner": "actions-45852774028",
-  "kind": "actions",
-  "runId": "45852774028",
-  "expiresAt": "2026-11-26T17:49:03.426Z"
+  "owner": null,
+  "releasedAt": "2026-11-26T15:49:10.282Z"
 }
