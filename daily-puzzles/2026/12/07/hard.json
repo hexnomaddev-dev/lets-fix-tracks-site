@@ -1,0 +1,60 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-07_hard",
+  "title": "Along the Towpath",
+  "difficulty": "hard",
+  "gridSize": 11,
+  "terminals": {
+    "start": {
+      "row": 2,
+      "col": 10,
+      "piece": "HORIZONTAL",
+      "externalSide": "EAST"
+    },
+    "destination": {
+      "row": 3,
+      "col": 0,
+      "piece": "TOP_LEFT",
+      "externalSide": "WEST"
+    }
+  },
+  "clues": {
+    "rows": [
+      6,
+      9,
+      8,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "cols": [
+      4,
+      3,
+      2,
+      1,
+      2,
+      2,
+      2,
+      1,
+      3,
+      3,
+      1
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 2,
+        "col": 6,
+        "piece": "TOP_RIGHT"
+      }
+    ],
+    "fixedEmpty": []
+  }
+}
