@@ -1,0 +1,79 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-10_expert",
+  "title": "A Fading Signal",
+  "difficulty": "expert",
+  "gridSize": 13,
+  "terminals": {
+    "start": {
+      "row": 9,
+      "col": 0,
+      "piece": "TOP_LEFT",
+      "externalSide": "WEST"
+    },
+    "destination": {
+      "row": 0,
+      "col": 11,
+      "piece": "VERTICAL",
+      "externalSide": "NORTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      6,
+      5,
+      5,
+      1,
+      2,
+      4,
+      4,
+      4,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "cols": [
+      3,
+      2,
+      2,
+      3,
+      6,
+      3,
+      3,
+      1,
+      3,
+      3,
+      2,
+      2,
+      0
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 2,
+        "col": 8,
+        "piece": "TOP_RIGHT"
+      },
+      {
+        "row": 7,
+        "col": 1,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 2,
+        "col": 9,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 1,
+        "col": 9,
+        "piece": "VERTICAL"
+      }
+    ],
+    "fixedEmpty": []
+  }
+}
