@@ -1,0 +1,86 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-04_medium",
+  "title": "A Hidden Terminus",
+  "difficulty": "medium",
+  "gridSize": 9,
+  "terminals": {
+    "start": {
+      "row": 5,
+      "col": 8,
+      "piece": "TOP_RIGHT",
+      "externalSide": "EAST"
+    },
+    "destination": {
+      "row": 0,
+      "col": 7,
+      "piece": "TOP_LEFT",
+      "externalSide": "NORTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      5,
+      4,
+      2,
+      0
+    ],
+    "cols": [
+      0,
+      0,
+      0,
+      2,
+      4,
+      5,
+      7,
+      8,
+      5
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 4,
+        "col": 4,
+        "piece": "HORIZONTAL"
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "piece": "HORIZONTAL"
+      },
+      {
+        "row": 4,
+        "col": 7,
+        "piece": "HORIZONTAL"
+      },
+      {
+        "row": 5,
+        "col": 5,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 5,
+        "col": 4,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 3,
+        "col": 8,
+        "piece": "TOP_LEFT"
+      }
+    ],
+    "fixedEmpty": [
+      {
+        "row": 1,
+        "col": 5
+      }
+    ]
+  }
+}
