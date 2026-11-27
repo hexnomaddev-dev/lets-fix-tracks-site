@@ -1,0 +1,68 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-08_easy",
+  "title": "An Empty Junction",
+  "difficulty": "easy",
+  "gridSize": 6,
+  "terminals": {
+    "start": {
+      "row": 1,
+      "col": 5,
+      "piece": "TOP_RIGHT",
+      "externalSide": "EAST"
+    },
+    "destination": {
+      "row": 5,
+      "col": 5,
+      "piece": "BOTTOM_LEFT",
+      "externalSide": "SOUTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      3,
+      4,
+      4,
+      2,
+      1,
+      5
+    ],
+    "cols": [
+      3,
+      5,
+      2,
+      4,
+      2,
+      3
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 5,
+        "col": 3,
+        "piece": "HORIZONTAL"
+      },
+      {
+        "row": 2,
+        "col": 2,
+        "piece": "HORIZONTAL"
+      }
+    ],
+    "fixedEmpty": [
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 4
+      },
+      {
+        "row": 1,
+        "col": 2
+      }
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-08_medium",
+  "title": "The Winters Between Trains",
+  "difficulty": "medium",
+  "gridSize": 9,
+  "terminals": {
+    "start": {
+      "row": 3,
+      "col": 8,
+      "piece": "HORIZONTAL",
+      "externalSide": "EAST"
+    },
+    "destination": {
+      "row": 0,
+      "col": 6,
+      "piece": "VERTICAL",
+      "externalSide": "NORTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      7,
+      8,
+      4,
+      5,
+      3,
+      3,
+      0,
+      0,
+      0
+    ],
+    "cols": [
+      2,
+      2,
+      4,
+      4,
+      4,
+      4,
+      6,
+      3,
+      1
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 2,
+        "col": 5,
+        "piece": "TOP_RIGHT"
+      },
+      {
+        "row": 4,
+        "col": 4,
+        "piece": "BOTTOM_LEFT"
+      },
+      {
+        "row": 0,
+        "col": 4,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 4,
+        "col": 6,
+        "piece": "VERTICAL"
+      },
+      {
+        "row": 1,
+        "col": 6,
+        "piece": "TOP_RIGHT"
+      }
+    ],
+    "fixedEmpty": [
+      {
+        "row": 0,
+        "col": 8
+      },
+      {
+        "row": 7,
+        "col": 6
+      }
+    ]
+  }
+}

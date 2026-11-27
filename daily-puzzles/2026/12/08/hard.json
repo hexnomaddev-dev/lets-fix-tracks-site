@@ -1,0 +1,65 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-08_hard",
+  "title": "Where the Late Trains Fall Silent",
+  "difficulty": "hard",
+  "gridSize": 11,
+  "terminals": {
+    "start": {
+      "row": 10,
+      "col": 4,
+      "piece": "BOTTOM_RIGHT",
+      "externalSide": "SOUTH"
+    },
+    "destination": {
+      "row": 6,
+      "col": 10,
+      "piece": "BOTTOM_RIGHT",
+      "externalSide": "EAST"
+    }
+  },
+  "clues": {
+    "rows": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      4,
+      4,
+      6,
+      5
+    ],
+    "cols": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      2,
+      2,
+      5,
+      5,
+      4,
+      4
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 8,
+        "col": 8,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 9,
+        "col": 8,
+        "piece": "BOTTOM_LEFT"
+      }
+    ],
+    "fixedEmpty": []
+  }
+}
