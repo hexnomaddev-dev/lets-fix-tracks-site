@@ -1,0 +1,76 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-11-27_medium",
+  "title": "A Sheltered Cutting",
+  "difficulty": "medium",
+  "gridSize": 9,
+  "terminals": {
+    "start": {
+      "row": 5,
+      "col": 0,
+      "piece": "BOTTOM_LEFT",
+      "externalSide": "WEST"
+    },
+    "destination": {
+      "row": 0,
+      "col": 0,
+      "piece": "BOTTOM_LEFT",
+      "externalSide": "WEST"
+    }
+  },
+  "clues": {
+    "rows": [
+      1,
+      1,
+      3,
+      7,
+      7,
+      6,
+      5,
+      0,
+      0
+    ],
+    "cols": [
+      7,
+      3,
+      3,
+      3,
+      5,
+      3,
+      4,
+      2,
+      0
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 4,
+        "col": 3,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 3,
+        "col": 6,
+        "piece": "HORIZONTAL"
+      },
+      {
+        "row": 3,
+        "col": 5,
+        "piece": "TOP_RIGHT"
+      },
+      {
+        "row": 6,
+        "col": 4,
+        "piece": "TOP_RIGHT"
+      }
+    ],
+    "fixedEmpty": [
+      {
+        "row": 2,
+        "col": 2
+      }
+    ]
+  }
+}
