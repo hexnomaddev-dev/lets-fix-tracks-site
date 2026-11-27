@@ -1,0 +1,46 @@
+{
+  "recoveryHistory": [],
+  "date": "2026-11-27",
+  "packageId": "f0ba59abdb2e15375ed58d1fd4bd9993bbf8a0d14494468b4100469094c34629",
+  "batchId": "0f697642ad50e959057296fd78c54377f36c199d544033e35ee1ce092b08e6e7",
+  "mode": "scheduled",
+  "schedulerRunId": 45915210960,
+  "phase": "Verify all five public HTTPS files",
+  "state": "PUBLISHED_VERIFIED",
+  "updatedAt": "2026-11-27T00:11:49.458Z",
+  "commit": "0ee872db0120360cf58dd3deab1dc17d54a4827a",
+  "deploymentIntent": {
+    "correlation": "53456b67-46cd-4cec-846d-224532d1d128",
+    "requestedAt": "2026-11-27T00:11:02.654Z"
+  },
+  "deployment": {
+    "status": "success",
+    "url": "https://github.com/hexnomaddev-dev/lets-fix-tracks-site/actions/runs/45915241146",
+    "runId": 45915241146,
+    "commit": "8ea170ec654b07888ccdd9731bcbade92bb12b4f",
+    "completedAt": "2026-11-27T00:11:45Z"
+  },
+  "url": "https://hexnomaddev-dev.github.io/lets-fix-tracks-site/daily-puzzles/2026/11/27/manifest.json",
+  "verifiedFiles": [
+    "easy.json",
+    "medium.json",
+    "hard.json",
+    "expert.json",
+    "manifest.json"
+  ],
+  "verifiedAt": "2026-11-27T00:11:51.263Z",
+  "checksums": {
+    "easy.json": "0d9dc74662ffc31675c7573db2e87941f0a7650038b47a037c5a873ba310b05c",
+    "medium.json": "fff0ef5443a2718cb7924c922e1f5ec4ec0bb84fcaf6ed200eec87ff27991a3d",
+    "hard.json": "2271de7616c99077dcb5df655dec86a11bc42e560026afca6af5239b622d79e4",
+    "expert.json": "586816d6d677d26a2172dc0b4e3d8fcbacea5aadb95303850cc548f61c2ae0d1",
+    "manifest.json": "3e6dd2732e62c916dbdfee43101ac6c206410d455580d7b06753be3ead1b55d9"
+  },
+  "publishedAt": "2026-11-27T00:11:45Z",
+  "error": null,
+  "errorCode": null,
+  "failedPhase": null,
+  "failedAt": null,
+  "failedSchedulerRunId": null,
+  "recoverable": false
+}
