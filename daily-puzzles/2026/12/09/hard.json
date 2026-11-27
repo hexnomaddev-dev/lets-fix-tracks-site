@@ -1,0 +1,60 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-09_hard",
+  "title": "Where the Branch Lines Divide",
+  "difficulty": "hard",
+  "gridSize": 11,
+  "terminals": {
+    "start": {
+      "row": 1,
+      "col": 0,
+      "piece": "BOTTOM_LEFT",
+      "externalSide": "WEST"
+    },
+    "destination": {
+      "row": 10,
+      "col": 1,
+      "piece": "BOTTOM_LEFT",
+      "externalSide": "SOUTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      0,
+      1,
+      1,
+      3,
+      2,
+      3,
+      3,
+      2,
+      3,
+      3,
+      2
+    ],
+    "cols": [
+      7,
+      8,
+      6,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 6,
+        "col": 2,
+        "piece": "HORIZONTAL"
+      }
+    ],
+    "fixedEmpty": []
+  }
+}
