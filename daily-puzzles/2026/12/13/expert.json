@@ -1,0 +1,79 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-13_expert",
+  "title": "Beneath the Old Bridge",
+  "difficulty": "expert",
+  "gridSize": 13,
+  "terminals": {
+    "start": {
+      "row": 0,
+      "col": 6,
+      "piece": "TOP_LEFT",
+      "externalSide": "NORTH"
+    },
+    "destination": {
+      "row": 12,
+      "col": 6,
+      "piece": "VERTICAL",
+      "externalSide": "SOUTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      5,
+      5,
+      3,
+      3,
+      1,
+      2,
+      1,
+      3,
+      4,
+      4,
+      1,
+      2,
+      1
+    ],
+    "cols": [
+      4,
+      7,
+      6,
+      4,
+      4,
+      5,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 5,
+        "col": 1,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 9,
+        "col": 4,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 1,
+        "col": 3,
+        "piece": "HORIZONTAL"
+      },
+      {
+        "row": 1,
+        "col": 2,
+        "piece": "BOTTOM_RIGHT"
+      }
+    ],
+    "fixedEmpty": []
+  }
+}

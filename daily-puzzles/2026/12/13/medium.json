@@ -1,0 +1,61 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-13_medium",
+  "title": "A Single Whistle",
+  "difficulty": "medium",
+  "gridSize": 9,
+  "terminals": {
+    "start": {
+      "row": 5,
+      "col": 8,
+      "piece": "HORIZONTAL",
+      "externalSide": "EAST"
+    },
+    "destination": {
+      "row": 0,
+      "col": 5,
+      "piece": "TOP_LEFT",
+      "externalSide": "NORTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      3,
+      5,
+      4,
+      3,
+      2,
+      2,
+      0,
+      0,
+      0
+    ],
+    "cols": [
+      0,
+      0,
+      0,
+      2,
+      4,
+      4,
+      1,
+      4,
+      4
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 3,
+        "col": 8,
+        "piece": "VERTICAL"
+      }
+    ],
+    "fixedEmpty": [
+      {
+        "row": 6,
+        "col": 4
+      }
+    ]
+  }
+}
