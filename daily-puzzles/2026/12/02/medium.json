@@ -1,0 +1,65 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-02_medium",
+  "title": "Where the Last Trains Wait",
+  "difficulty": "medium",
+  "gridSize": 9,
+  "terminals": {
+    "start": {
+      "row": 8,
+      "col": 1,
+      "piece": "BOTTOM_LEFT",
+      "externalSide": "SOUTH"
+    },
+    "destination": {
+      "row": 0,
+      "col": 4,
+      "piece": "VERTICAL",
+      "externalSide": "NORTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      1,
+      2,
+      2,
+      3,
+      4,
+      3,
+      3,
+      2,
+      2
+    ],
+    "cols": [
+      2,
+      6,
+      4,
+      5,
+      5,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 4,
+        "col": 2,
+        "piece": "TOP_RIGHT"
+      }
+    ],
+    "fixedEmpty": [
+      {
+        "row": 1,
+        "col": 6
+      },
+      {
+        "row": 1,
+        "col": 5
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-02_hard",
+  "title": "Where the Late Trains Wait",
+  "difficulty": "hard",
+  "gridSize": 11,
+  "terminals": {
+    "start": {
+      "row": 8,
+      "col": 0,
+      "piece": "BOTTOM_LEFT",
+      "externalSide": "WEST"
+    },
+    "destination": {
+      "row": 10,
+      "col": 6,
+      "piece": "BOTTOM_LEFT",
+      "externalSide": "SOUTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      4,
+      4,
+      4,
+      5,
+      3
+    ],
+    "cols": [
+      4,
+      5,
+      4,
+      2,
+      3,
+      4,
+      1,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 6,
+        "col": 0,
+        "piece": "TOP_RIGHT"
+      }
+    ],
+    "fixedEmpty": []
+  }
+}
