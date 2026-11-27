@@ -1,0 +1,75 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-12_hard",
+  "title": "The Second Signal",
+  "difficulty": "hard",
+  "gridSize": 11,
+  "terminals": {
+    "start": {
+      "row": 0,
+      "col": 9,
+      "piece": "TOP_LEFT",
+      "externalSide": "NORTH"
+    },
+    "destination": {
+      "row": 5,
+      "col": 10,
+      "piece": "HORIZONTAL",
+      "externalSide": "EAST"
+    }
+  },
+  "clues": {
+    "rows": [
+      6,
+      3,
+      5,
+      5,
+      5,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "cols": [
+      0,
+      0,
+      0,
+      0,
+      5,
+      5,
+      4,
+      4,
+      3,
+      5,
+      3
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 4,
+        "col": 6,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 3,
+        "col": 7,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 4,
+        "col": 7,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 3,
+        "col": 9,
+        "piece": "BOTTOM_RIGHT"
+      }
+    ],
+    "fixedEmpty": []
+  }
+}

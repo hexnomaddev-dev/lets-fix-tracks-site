@@ -1,0 +1,90 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-12_medium",
+  "title": "The Switch Stand after Dark",
+  "difficulty": "medium",
+  "gridSize": 9,
+  "terminals": {
+    "start": {
+      "row": 8,
+      "col": 3,
+      "piece": "VERTICAL",
+      "externalSide": "SOUTH"
+    },
+    "destination": {
+      "row": 0,
+      "col": 5,
+      "piece": "VERTICAL",
+      "externalSide": "NORTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      3,
+      5,
+      4,
+      4,
+      1,
+      2,
+      5,
+      4,
+      3
+    ],
+    "cols": [
+      0,
+      0,
+      2,
+      3,
+      6,
+      7,
+      5,
+      5,
+      3
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 0,
+        "col": 6,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 3,
+        "col": 8,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 2,
+        "col": 4,
+        "piece": "VERTICAL"
+      },
+      {
+        "row": 2,
+        "col": 6,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 6,
+        "col": 6,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 7,
+        "col": 3,
+        "piece": "BOTTOM_LEFT"
+      }
+    ],
+    "fixedEmpty": [
+      {
+        "row": 7,
+        "col": 8
+      },
+      {
+        "row": 3,
+        "col": 1
+      }
+    ]
+  }
+}
