@@ -1,6 +1,8 @@
 {
   "format": "lft.publisher-lock",
   "version": 1,
-  "owner": null,
-  "releasedAt": "2026-11-27T11:00:55.135Z"
+  "owner": "c18966ec-c34e-4c79-8ca9-3631e27e4789",
+  "kind": "native",
+  "runId": null,
+  "expiresAt": "2026-11-27T13:01:07.902Z"
 }
