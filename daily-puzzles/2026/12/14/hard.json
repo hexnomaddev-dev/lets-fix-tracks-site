@@ -1,0 +1,75 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-14_hard",
+  "title": "A Shaded Approach",
+  "difficulty": "hard",
+  "gridSize": 11,
+  "terminals": {
+    "start": {
+      "row": 4,
+      "col": 0,
+      "piece": "HORIZONTAL",
+      "externalSide": "WEST"
+    },
+    "destination": {
+      "row": 2,
+      "col": 10,
+      "piece": "TOP_RIGHT",
+      "externalSide": "EAST"
+    }
+  },
+  "clues": {
+    "rows": [
+      5,
+      8,
+      7,
+      6,
+      4,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "cols": [
+      3,
+      4,
+      2,
+      1,
+      2,
+      2,
+      2,
+      5,
+      5,
+      5,
+      2
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 2,
+        "col": 6,
+        "piece": "BOTTOM_LEFT"
+      },
+      {
+        "row": 4,
+        "col": 7,
+        "piece": "VERTICAL"
+      },
+      {
+        "row": 1,
+        "col": 9,
+        "piece": "TOP_RIGHT"
+      },
+      {
+        "row": 3,
+        "col": 6,
+        "piece": "TOP_RIGHT"
+      }
+    ],
+    "fixedEmpty": []
+  }
+}

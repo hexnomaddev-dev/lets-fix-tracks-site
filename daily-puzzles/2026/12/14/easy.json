@@ -1,0 +1,68 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-14_easy",
+  "title": "A Stone Footbridge",
+  "difficulty": "easy",
+  "gridSize": 6,
+  "terminals": {
+    "start": {
+      "row": 5,
+      "col": 1,
+      "piece": "BOTTOM_RIGHT",
+      "externalSide": "SOUTH"
+    },
+    "destination": {
+      "row": 0,
+      "col": 2,
+      "piece": "TOP_LEFT",
+      "externalSide": "NORTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      2,
+      3,
+      3,
+      3,
+      4,
+      4
+    ],
+    "cols": [
+      0,
+      4,
+      5,
+      4,
+      3,
+      3
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 4,
+        "col": 3,
+        "piece": "HORIZONTAL"
+      },
+      {
+        "row": 2,
+        "col": 3,
+        "piece": "VERTICAL"
+      }
+    ],
+    "fixedEmpty": [
+      {
+        "row": 2,
+        "col": 4
+      },
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 5
+      }
+    ]
+  }
+}
