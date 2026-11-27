@@ -1,0 +1,81 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-03_medium",
+  "title": "Where the Hedges Meet",
+  "difficulty": "medium",
+  "gridSize": 9,
+  "terminals": {
+    "start": {
+      "row": 5,
+      "col": 8,
+      "piece": "TOP_RIGHT",
+      "externalSide": "EAST"
+    },
+    "destination": {
+      "row": 0,
+      "col": 5,
+      "piece": "TOP_LEFT",
+      "externalSide": "NORTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      2,
+      4,
+      3,
+      5,
+      4,
+      4,
+      4,
+      2,
+      3
+    ],
+    "cols": [
+      0,
+      0,
+      0,
+      0,
+      7,
+      7,
+      6,
+      8,
+      3
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 4,
+        "col": 6,
+        "piece": "TOP_RIGHT"
+      },
+      {
+        "row": 5,
+        "col": 7,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 3,
+        "col": 5,
+        "piece": "TOP_RIGHT"
+      },
+      {
+        "row": 3,
+        "col": 6,
+        "piece": "BOTTOM_LEFT"
+      },
+      {
+        "row": 4,
+        "col": 8,
+        "piece": "VERTICAL"
+      }
+    ],
+    "fixedEmpty": [
+      {
+        "row": 6,
+        "col": 1
+      }
+    ]
+  }
+}
