@@ -1,0 +1,64 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-06_expert",
+  "title": "A Moonlit Station",
+  "difficulty": "expert",
+  "gridSize": 13,
+  "terminals": {
+    "start": {
+      "row": 10,
+      "col": 0,
+      "piece": "BOTTOM_LEFT",
+      "externalSide": "WEST"
+    },
+    "destination": {
+      "row": 4,
+      "col": 12,
+      "piece": "HORIZONTAL",
+      "externalSide": "EAST"
+    }
+  },
+  "clues": {
+    "rows": [
+      0,
+      0,
+      0,
+      0,
+      2,
+      2,
+      3,
+      6,
+      3,
+      4,
+      3,
+      5,
+      3
+    ],
+    "cols": [
+      2,
+      1,
+      2,
+      3,
+      5,
+      2,
+      1,
+      3,
+      1,
+      2,
+      2,
+      3,
+      4
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 10,
+        "col": 4,
+        "piece": "TOP_LEFT"
+      }
+    ],
+    "fixedEmpty": []
+  }
+}
