@@ -1,0 +1,84 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-15_expert",
+  "title": "The Autumn Journey",
+  "difficulty": "expert",
+  "gridSize": 13,
+  "terminals": {
+    "start": {
+      "row": 0,
+      "col": 6,
+      "piece": "TOP_RIGHT",
+      "externalSide": "NORTH"
+    },
+    "destination": {
+      "row": 12,
+      "col": 9,
+      "piece": "BOTTOM_RIGHT",
+      "externalSide": "SOUTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      5,
+      5,
+      4,
+      1,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2,
+      1,
+      3,
+      2
+    ],
+    "cols": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      3,
+      3,
+      4,
+      10,
+      10
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 10,
+        "col": 12,
+        "piece": "VERTICAL"
+      },
+      {
+        "row": 11,
+        "col": 12,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 9,
+        "col": 11,
+        "piece": "TOP_RIGHT"
+      },
+      {
+        "row": 6,
+        "col": 11,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 12,
+        "col": 10,
+        "piece": "TOP_LEFT"
+      }
+    ],
+    "fixedEmpty": []
+  }
+}

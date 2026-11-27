@@ -1,0 +1,63 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-15_easy",
+  "title": "Where the Last Signals Disappear",
+  "difficulty": "easy",
+  "gridSize": 6,
+  "terminals": {
+    "start": {
+      "row": 0,
+      "col": 4,
+      "piece": "TOP_LEFT",
+      "externalSide": "NORTH"
+    },
+    "destination": {
+      "row": 5,
+      "col": 2,
+      "piece": "BOTTOM_RIGHT",
+      "externalSide": "SOUTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      3,
+      3,
+      2,
+      1,
+      2,
+      3
+    ],
+    "cols": [
+      0,
+      0,
+      3,
+      3,
+      5,
+      3
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 5,
+        "col": 3,
+        "piece": "HORIZONTAL"
+      }
+    ],
+    "fixedEmpty": [
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 3,
+        "col": 2
+      }
+    ]
+  }
+}
