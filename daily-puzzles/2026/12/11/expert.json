@@ -1,0 +1,124 @@
+{
+  "format": "lets-fix-tracks.player-puzzle",
+  "schemaVersion": "1.0.0",
+  "puzzleId": "lft_daily_2026-12-11_expert",
+  "title": "Beneath the Night Sky",
+  "difficulty": "expert",
+  "gridSize": 13,
+  "terminals": {
+    "start": {
+      "row": 0,
+      "col": 8,
+      "piece": "TOP_LEFT",
+      "externalSide": "NORTH"
+    },
+    "destination": {
+      "row": 12,
+      "col": 6,
+      "piece": "VERTICAL",
+      "externalSide": "SOUTH"
+    }
+  },
+  "clues": {
+    "rows": [
+      2,
+      3,
+      4,
+      3,
+      3,
+      1,
+      2,
+      3,
+      6,
+      4,
+      4,
+      7,
+      7
+    ],
+    "cols": [
+      5,
+      6,
+      5,
+      5,
+      4,
+      5,
+      5,
+      4,
+      5,
+      3,
+      2,
+      0,
+      0
+    ]
+  },
+  "givens": {
+    "fixedTracks": [
+      {
+        "row": 11,
+        "col": 0,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 11,
+        "col": 4,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 5,
+        "col": 6,
+        "piece": "VERTICAL"
+      },
+      {
+        "row": 11,
+        "col": 1,
+        "piece": "TOP_LEFT"
+      },
+      {
+        "row": 9,
+        "col": 1,
+        "piece": "BOTTOM_LEFT"
+      },
+      {
+        "row": 10,
+        "col": 2,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 10,
+        "col": 1,
+        "piece": "VERTICAL"
+      },
+      {
+        "row": 12,
+        "col": 3,
+        "piece": "TOP_RIGHT"
+      },
+      {
+        "row": 10,
+        "col": 4,
+        "piece": "BOTTOM_LEFT"
+      },
+      {
+        "row": 1,
+        "col": 7,
+        "piece": "VERTICAL"
+      },
+      {
+        "row": 11,
+        "col": 2,
+        "piece": "VERTICAL"
+      },
+      {
+        "row": 11,
+        "col": 5,
+        "piece": "BOTTOM_RIGHT"
+      },
+      {
+        "row": 2,
+        "col": 9,
+        "piece": "TOP_RIGHT"
+      }
+    ],
+    "fixedEmpty": []
+  }
+}
